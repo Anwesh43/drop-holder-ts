@@ -18,11 +18,16 @@ const DropHolder : React.FC<DropHolderProps> = (props : DropHolderProps) => {
                     <span style = {itemStyle()}>{item}</span>
                 ))}
             </div>
-            <button onClick = {props.onClick()} style = {{left : `${props.w /2}px`, position: 'absolute', top : `${props.h / 2}px`}}>
+            <button onClick = {() => props.onClick()} style = {{left : `${props.w /2}px`, position: 'absolute', top : `${props.h / 2}px`}}>
                 Open
             </button>
         </React.Fragment>
     )
+}
+
+
+DropHolder.defaultProps = {
+    items: ["Hello world", "More to it", "Tailwinf"]
 }
 
 export default withContainer(DropHolder)

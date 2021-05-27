@@ -4,11 +4,14 @@ const withContainer = (MainComponent : React.FC<any>) : React.FC<any> =>   {
     return () => {
         const {scale, start : onClick} = useAnimatedScale()
         const {w, h} = useDimension()
+        const defaultProps = MainComponent.defaultProps
+        console.log("Default Props")
         const props = {
             w, 
             h, 
             onClick, 
-            scale 
+            scale,
+            ...defaultProps
         }
         return (
             <MainComponent {...props}>

@@ -54,7 +54,7 @@ export const useStyle = (w : number, h : number, scale : number) => {
             const display = 'flex'
             const flexDirection = 'column'
             const background = 'indigo'
-            const fontSize = `${hSize / 2}px`
+            const fontSize = `${hSize / 4}px`
             const color = 'white'
             return {
                 position, 
@@ -69,13 +69,14 @@ export const useStyle = (w : number, h : number, scale : number) => {
             }
         },
         itemStyle() {
-            const borderBottom = '10px solid white'
+            const borderBottom = '2px solid white'
             const border = 'none'
-            const width = `${size}px`
+            const width = `${0.8 * size}px`
             const height = `${hSize}px`
             const display = 'flex'
             const justifyContent = 'center'
             const alignItems = 'center'
+            const marginLeft = `${size * 0.1}px`
             return {
                 border, 
                 width, 
@@ -83,7 +84,8 @@ export const useStyle = (w : number, h : number, scale : number) => {
                 borderBottom,
                 display,
                 justifyContent, 
-                alignItems
+                alignItems,
+                marginLeft
             }
         }
     }
